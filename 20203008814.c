@@ -1,6 +1,6 @@
 /****
 
-LAED1 - Projeto (Parte III) - Proximidade dos obstáculos
+LAED1 - Projeto (Parte III) - Proximidade dos obstÃ¡culos
 
 Aluno: Gabriel Siqueira Silva
 
@@ -10,9 +10,9 @@ Data: 26/08/2021
 
 #include <stdio.h> // Necessario para compilar o programa
 #include <string.h> // Necessario para operar com as strings do arquivo
-#include <stdlib.h> // Necessario para realizar funções nao existentes na biblioteca padrao
+#include <stdlib.h> // Necessario para realizar funÃ§Ãµes nao existentes na biblioteca padrao
 
-// Funcoes de lista, fonte: Ziviane - Estrutura de Dados Básicas (Usando Arranjo)
+// Funcoes de lista, fonte: Ziviane - Estrutura de Dados BÃ¡sicas (Usando Arranjo)
 #define INICIOARRANJO   1
 #define MAXTAM          1000
 
@@ -34,9 +34,9 @@ typedef struct {
 
 /* ========================================================================== */
 
-void FLVazia(TipoLista *Lista){
+void FLVazia(TipoLista *Lista){ // Ha uma igualdade entre a posicao do primeiro e ultimo item de uma lista tornando-a vazia
     Lista -> Primeiro = INICIOARRANJO;
-    Lista -> Ultimo = Lista -> Primeiro;
+    Lista -> Ultimo = Lista -> Primeiro; 
 }
 
 int Vazia(TipoLista Lista){
@@ -47,8 +47,8 @@ void Insere(TipoItem x, TipoLista *Lista){
     if (Lista -> Ultimo > MAXTAM)
         printf("Lista esta cheia\n");
     else {
-        Lista -> Item[Lista -> Ultimo - 1] = x;
-        Lista -> Ultimo++;
+        Lista -> Item[Lista -> Ultimo - 1] = x; // Adiciona-se x a posicao de ultimo - 1 porque o arranjo comeca em zero
+        Lista -> Ultimo++; // Adiciona-se uma nova posicao
     }
 }
 
@@ -79,11 +79,11 @@ int main() {
     FLVazia(&lista); // Cria a lista vazia
 
     // Contadores
-    int erro = 0; // Contador que verifica se há interrupcao na estrada
+    int erro = 0; // Contador que verifica se hÃ¡ interrupcao na estrada
     int n; // Item para criacao de um vetor ajustavel
     int m; // Item para criacao de um vetor ajustavel
     int i = 0; // Utilizado para preencher o vetor que armazena os dados provenientes do arquivo (vetor)
-    int z = 0; // Utilizado para preencher o vetor que recebe a separação de itens do vetor anterior (receptor)
+    int z = 0; // Utilizado para preencher o vetor que recebe a separaÃ§Ã£o de itens do vetor anterior (receptor)
     int q = 0; // Contador generico
     int e = 0; // Contador generico
     int disp = 0; // Assume o valor da quantidade de dados
@@ -123,7 +123,7 @@ int main() {
         char *token = strtok(vetor[j], " ");
         while(token != NULL) {
             receptor[z] = token;
-            token = strtok(NULL, " "); // Utilizado para separar os numeros a partir do espaço entre eles, unico problema e que a quebra de linha tambem esta sendo armazenada
+            token = strtok(NULL, " "); // Utilizado para separar os numeros a partir do espaÃ§o entre eles, unico problema e que a quebra de linha tambem esta sendo armazenada
             z++;
         }
     }
@@ -138,7 +138,7 @@ int main() {
             temp--;
         }
         else{
-            vetorInteiro[e][q] = conversor; // Nao é mais armazenada a quebra de linha
+            vetorInteiro[e][q] = conversor; // Nao Ã© mais armazenada a quebra de linha
             vetorCrescente[e][q] = conversor;
             e++;
             if (e == m){
@@ -202,7 +202,7 @@ int main() {
             }
         }
 
-        // Nesse for, podemos realizar a separação das matrizes e organizar o resultado final
+        // Nesse for, podemos realizar a separaÃ§Ã£o das matrizes e organizar o resultado final
         // A Matriz final organiza de acordo com o vetor retirado do documento orginal
         /*
         Ex: 			0 0 0 128 128 0 0 255 255 255 255
@@ -241,7 +241,7 @@ int main() {
             }
         }
 
-        // Esse for realiza a conservação da primeira linha da Matriz Final (1 1 1  2   2  1 1  3   3   3   3)
+        // Esse for realiza a conservaÃ§Ã£o da primeira linha da Matriz Final (1 1 1  2   2  1 1  3   3   3   3)
         k=0;
         for(int x = 0; x<2; x++){
             for(int y = 0; y<disp; y++){
@@ -252,7 +252,7 @@ int main() {
             }
         }
 
-        //Alteração do código passado a partir deste ponto
+        //AlteraÃ§Ã£o do cÃ³digo passado a partir deste ponto
         int matrizReajuste[2][disp+2];
         for(int x = 0; x<2; x++){
             for(int y = 0; y<tamanho; y++){
@@ -274,7 +274,7 @@ int main() {
 			k++;
 		}
 		else{
-			if(contador != 0){ // Evita loop e saltos quando o if não e satisfeito
+			if(contador != 0){ // Evita loop e saltos quando o if nÃ£o e satisfeito
 				y--;
 			}
 			contador = 0;
@@ -296,14 +296,14 @@ int main() {
 				k++;
 			}
 			else{
-				if(contador != 0){ // Evita loop e saltos quando o if não e satisfeito
+				if(contador != 0){ // Evita loop e saltos quando o if nÃ£o e satisfeito
 					y--;
 				}
 				contador = 0;
 				k = 0;
 			}
 		}
-		if(contadorTerciario != 0){ // Verifica se a pista está impedida em algum ponto
+		if(contadorTerciario != 0){ // Verifica se a pista estÃ¡ impedida em algum ponto
 			for(i = 0; i<strlen(resposta2); i++){
 				item.Resultado[i] = resposta2[i];
 				erro++;
