@@ -1,7 +1,5 @@
 # AEDS_Field-Analysis
 
-AEDS_Field Analysis
-
 Coding for field analysis for approval of Algorithms and Data Structure I.
 
 The objective of this program is to identify field hazards from the observation pattern. The pattern below was considered:
@@ -13,7 +11,7 @@ The objective of this program is to identify field hazards from the observation 
 Therefore, in uninterrupted field, the pattern observed was 1-2-3-2-1 and in interruption the sequence 3-2-1 did not occur easily. Also, this code establishes the position of the obstacle if it is near or far using a fifteen-slice division.
 
 
-=======================================
+----
 
 Codificação de um programa de análise de pistas para aprovação na disciplina de laboratório de Algoritmos e Estrutura de Dados 1.
 
